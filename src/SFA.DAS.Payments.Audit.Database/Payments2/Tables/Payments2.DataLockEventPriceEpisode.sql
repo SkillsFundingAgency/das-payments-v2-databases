@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [Payments2].[DataLockEventPriceEpisode]
 (
 	Id BIGINT NOT NULL IDENTITY(1,1) CONSTRAINT PK_DataLockEventPriceEpisode PRIMARY KEY CLUSTERED,
-	DataLockEventId UNIQUEIDENTIFIER NOT NULL CONSTRAINT FK_DataLockEventPriceEpisode__DataLockEvent FOREIGN KEY REFERENCES [Payments2].[DataLockEvent] (EventId) ON DELETE CASCADE, 
+	DataLockEventId UNIQUEIDENTIFIER NOT NULL, 
 	PriceEpisodeIdentifier NVARCHAR(50) NOT NULL,
 	SfaContributionPercentage DECIMAL(15,5) NOT NULL,
 	TotalNegotiatedPrice1 DECIMAL(15,5) NOT NULL,
@@ -18,15 +18,17 @@
 	Completed BIT NOT NULL,
     	EmployerContribution DECIMAL(15,5) NULL,
     	CompletionHoldBackExemptionCode INT NULL,
-	CreationDate DATETIMEOFFSET NOT NULL CONSTRAINT DF_DataLockEventPriceEpisode__CreationDate DEFAULT (SYSDATETIMEOFFSET()),
+	CreationDate DATETIMEOFFSET NOT NULL,
 	AcademicYear SMALLINT NULL,
 	CollectionPeriod TINYINT NULL
 )
 GO
 
-CREATE NONCLUSTERED INDEX [IX_DataLockEventPriceEpisode__DataLockEventId] ON [Payments2].[DataLockEventPriceEpisode] 
-(	
+CREATE NONCLUSTERED INDEX [IX_DataLockEventPriceEpisode__AuditDataFactory] ON [Payments2].[DataLockEventPriceEpisode]
+(
+	[AcademicYear],
+	[CollectionPeriod],
 	[DataLockEventId]
-) 
+)
 WITH (ONLINE = ON)
 GO

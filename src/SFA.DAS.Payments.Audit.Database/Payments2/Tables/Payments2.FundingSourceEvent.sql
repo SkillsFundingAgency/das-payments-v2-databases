@@ -29,7 +29,7 @@ CREATE TABLE [Payments2].[FundingSourceEvent]
 	AgreementId NVARCHAR(255) NULL, 
 	AccountId BIGINT NULL, 
 	TransferSenderAccountId BIGINT NULL, 
-	CreationDate DATETIMEOFFSET NOT NULL CONSTRAINT DF_FundingSourceEvent__CreationDate DEFAULT (SYSDATETIMEOFFSET()),
+	CreationDate DATETIMEOFFSET NOT NULL,
 	EarningsStartDate DATETIME NOT NULL,
 	EarningsPlannedEndDate DATETIME NULL,
 	EarningsActualEndDate DATETIME NULL,
@@ -46,57 +46,11 @@ CREATE TABLE [Payments2].[FundingSourceEvent]
 )
 GO
 
-CREATE UNIQUE INDEX [UX_FundingSourceEvent_LogicalDuplicates] ON [Payments2].[FundingSourceEvent]
+CREATE NONCLUSTERED INDEX [IX_FundingSourceEvent__AuditDataFactory] ON [Payments2].[FundingSourceEvent]
 (
-	[JobId],
-	[Ukprn],
 	[AcademicYear],
 	[CollectionPeriod],
-	[DeliveryPeriod],
-	[ContractType],
-	[TransactionType],
-	[Amount],
-	[SfaContributionPercentage],
-	[LearnerUln],
-	[LearnerReferenceNumber],
-	[LearningAimReference],
-	[LearningAimProgrammeType],
-	[LearningAimStandardCode],
-	[LearningAimFrameworkCode],
-	[LearningAimPathwayCode],
-	[LearningAimFundingLineType],
-	[LearningStartDate],
-	[FundingSourceType],
-	[ApprenticeshipId],
-	[AccountId],
-	[TransferSenderAccountId],
-	[ApprenticeshipEmployerType],
-	[ClawbackSourcePaymentEventId],
-	[DuplicateNumber]
+	[EventId]
 )
-GO
-
-CREATE NONCLUSTERED INDEX [IX_FundingSourceEvent__Audit] ON [Payments2].[FundingSourceEvent]
-(
-	[EarningEventId],
-	[RequiredPaymentEventId]
-) 
-WITH (ONLINE = ON)
-GO
-
-CREATE NONCLUSTERED INDEX [IX_FundingSourceEvent__Submission] ON [Payments2].[FundingSourceEvent] 
-(
-	[AcademicYear], 
-	[CollectionPeriod], 
-	[Ukprn], 
-	[IlrSubmissionDateTime]
-) 
-WITH (ONLINE = ON)
-GO
-
-CREATE NONCLUSTERED INDEX [IX_FundingSourceEvent__JobId] ON [Payments2].[FundingSourceEvent] 
-(
-	[JobId]
-) 
 WITH (ONLINE = ON)
 GO
