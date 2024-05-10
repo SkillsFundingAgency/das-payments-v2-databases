@@ -1,40 +1,38 @@
-parameters:
-  SolutionBaseName:
-  BuildConfiguration:
-
 jobs:
 - job: CodeBuild
   pool:
-    name: DAS - Continuous Integration Agents
-    workspace:
-      clean: all
+    name: SLD Build pool
   variables:
   - group: BUILD Management Resources
+  - name: SolutionBaseName
+    value: SFA.DAS.Payments.Databases
   steps:
-  - template: azure-pipelines-templates/build/step/gitversion.yml@das-platform-building-blocks
+  - template: /azure-pipelines-templates/build/step/gitversion.yml
 
-  - template: azure-pipelines-templates/build/step/app-build.yml@das-platform-building-blocks
-
-  - task: DotNetCoreCLI@2
-    displayName: Publish - dotnet publish ${{ parameters.SolutionBaseName }}
+  - task: MSBuild@1
+    displayName: 'Build Database Project copy'
     inputs:
-      command: publish
-      publishWebProjects: false #set to false as this setting (which defaults to true) will parse the entire repo for web projects
-      projects: src/${{ parameters.SolutionBaseName }}/${{ parameters.SolutionBaseName }}.csproj
-      arguments: -o $(build.artifactstagingdirectory)/publish -c ${{ parameters.BuildConfiguration }} --no-build
-      modifyOutputPath: true
-      zipAfterPublish: true
+      solution: '**/SFA.DAS.Payments.Database.sqlproj'
+      platform: '$(BuildPlatform)'
+      configuration: '$(BuildConfiguration)'
+      msbuildArguments: '/p:version=$(Build.BuildNumber) /p:FileVersion=$(Build.BuildNumber)'
+      clean: true
+      maximumCpuCount: true
+      logProjectEvents: true
+      createLogFile: true
+    enabled: false
 
   - task: CopyFiles@2
-    displayName: Copy Files to $(build.artifactstagingdirectory)/publish
+    displayName: 'Copy Database Files to: Artifact Databases Directory'
     inputs:
-      Contents: |
-        azure/**
-      TargetFolder: $(build.artifactstagingdirectory)/publish
-      OverWrite: true
+      SourceFolder: '$(System.DefaultWorkingDirectory)/src/'
+      Contents: '**\*.dacpac'
+      TargetFolder: '$(build.artifactstagingdirectory)\Databases'
+      flattenFolders: true
 
-  - task: PublishPipelineArtifact@1
-    displayName: Publish Build Artifact
+  - task: CopyFiles@2
+    displayName: 'Copy Database Files to: Artifact AcceptanceTests'
     inputs:
-      targetPath: $(build.artifactstagingdirectory)/publish
-      artifactName: ${{ parameters.SolutionBaseName }}
+      SourceFolder: '$(System.DefaultWorkingDirectory)/src/'
+      Contents: |
+      **\*AcceptanceTests*\**\bin\$(BuildConfiguration)\**
