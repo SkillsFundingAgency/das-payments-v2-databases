@@ -25,15 +25,15 @@ jobs:
   - task: CopyFiles@2
     displayName: 'Copy Database Files to: Artifact Databases Directory'
     inputs:
-      SourceFolder: '$(System.DefaultWorkingDirectory)/src/'
-      Contents: '**\*.dacpac'
+      SourceFolder: 'src/**'
+      Contents: '**/*.dacpac'
       TargetFolder: '$(build.artifactstagingdirectory)\Databases'
       flattenFolders: true
 
   - task: CopyFiles@2
     displayName: 'Copy Database Files to: Artifact AcceptanceTests'
     inputs:
-      SourceFolder: '$(System.DefaultWorkingDirectory)/src/'
+      SourceFolder: 'src/**'
       Contents: |
         **\*AcceptanceTests*\**\bin\$(BuildConfiguration)\**
       TargetFolder: '$(build.artifactstagingdirectory)\AcceptanceTests'
