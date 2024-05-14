@@ -28,7 +28,6 @@ jobs:
       SourceFolder: '$(System.DefaultWorkingDirectory)/src/'
       Contents: '**\*.dacpac'
       TargetFolder: '$(build.artifactstagingdirectory)\Databases'
-<<<<<<< HEAD
       flattenFolders: true
 
   - task: CopyFiles@2
@@ -39,6 +38,3 @@ jobs:
       **\*AcceptanceTests*\**\bin\$(BuildConfiguration)\**
       TargetFolder: '$(build.artifactstagingdirectory)\AcceptanceTests'
       CleanTargetFolder: true
-=======
-      flattenFolders: true
->>>>>>> c52e4499adb10dc15fc3ec6a2430c6edf154d325
