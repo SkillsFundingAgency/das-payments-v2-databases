@@ -36,3 +36,5 @@ jobs:
       SourceFolder: '$(System.DefaultWorkingDirectory)/src/'
       Contents: |
       **\*AcceptanceTests*\**\bin\$(BuildConfiguration)\**
+      TargetFolder: '$(build.artifactstagingdirectory)\AcceptanceTests'
+      CleanTargetFolder: true
