@@ -29,10 +29,3 @@ jobs:
       Contents: '**\*.dacpac'
       TargetFolder: '$(build.artifactstagingdirectory)\Databases'
       flattenFolders: true
-
-  - task: CopyFiles@2
-    displayName: 'Copy Database Files to: Artifact AcceptanceTests'
-    inputs:
-      SourceFolder: '$(System.DefaultWorkingDirectory)/src/'
-      Contents: |
-      **\*AcceptanceTests*\**\bin\$(BuildConfiguration)\**
