@@ -12,7 +12,7 @@ jobs:
   - task: MSBuild@1
     displayName: 'Build Database Project copy'
     inputs:
-      solution: '**/SFA.DAS.Payments.Databases.sln'
+      solution: 'src/SFA.DAS.Payments.Databases.sln'
       platform: '$(BuildPlatform)'
       configuration: '$(BuildConfiguration)'
       msbuildArguments: '/p:version=$(Build.BuildNumber) /p:FileVersion=$(Build.BuildNumber)'
