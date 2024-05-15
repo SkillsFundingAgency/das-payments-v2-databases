@@ -20,7 +20,7 @@ jobs:
       maximumCpuCount: true
       logProjectEvents: true
       createLogFile: true
-    enabled: false
+      #enabled: false
 
   - task: CopyFiles@2
     displayName: 'Copy Database Files to: Artifact Databases Directory'
