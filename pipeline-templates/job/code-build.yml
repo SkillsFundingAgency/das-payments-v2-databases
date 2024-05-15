@@ -12,9 +12,8 @@ jobs:
   - task: MSBuild@1
     displayName: 'Build Database Project copy'
     inputs:
-      solution: 'src/SFA.DAS.Payments.Databases.sln'
-      platform: '$(BuildPlatform)'
-      configuration: '$(BuildConfiguration)'
+      #solution: 'src/SFA.DAS.Payments.Databases.sln'
+      msbuildArchitecture: x64
       msbuildArguments: '/p:version=$(Build.BuildNumber) /p:FileVersion=$(Build.BuildNumber)'
       clean: true
       maximumCpuCount: true
