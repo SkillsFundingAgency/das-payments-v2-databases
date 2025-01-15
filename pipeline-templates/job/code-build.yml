@@ -1,0 +1,43 @@
+jobs:
+- job: CodeBuild
+  pool:
+    name: SLD Build pool
+  variables:
+  - group: BUILD Management Resources
+  - name: SolutionBaseName
+    value: SFA.DAS.Payments.Databases
+  steps:
+  - template: /azure-pipelines-templates/build/step/gitversion.yml
+
+  - task: MSBuild@1
+    displayName: 'Build Database Project copy'
+    inputs:
+      #solution: 'src/SFA.DAS.Payments.Databases.sln'
+      msbuildArchitecture: x64
+      msbuildArguments: '/p:version=$(Build.BuildNumber) /p:FileVersion=$(Build.BuildNumber)'
+      clean: true
+      maximumCpuCount: true
+      logProjectEvents: true
+      createLogFile: true
+      #enabled: false
+
+  - task: CopyFiles@2
+    displayName: 'Copy Database Files to: Artifact Databases Directory'
+    inputs:
+      Contents: 'src/**/*.dacpac'
+      TargetFolder: '$(build.artifactstagingdirectory)\Databases'
+      flattenFolders: true
+
+  - task: CopyFiles@2
+    displayName: 'Copy Database Files to: Artifact AcceptanceTests'
+    inputs:
+      Contents: 'src\*AcceptanceTests*\**\bin\$(BuildConfiguration)\**'
+      TargetFolder: '$(build.artifactstagingdirectory)\AcceptanceTests'
+      CleanTargetFolder: true
+
+  - task: PublishPipelineArtifact@1
+    displayName: 'Publish Pipeline Artifact - Databases'
+    inputs:
+      targetPath: $(build.artifactstagingdirectory)
+      artifact: databases-drop
+      continueOnError: true
