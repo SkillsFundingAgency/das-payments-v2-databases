@@ -6,7 +6,7 @@
 	[LearnerId] BIGINT NOT NULL,
 	[LearnerUln] BIGINT NOT NULL,
 	[LearnerReference] NVARCHAR(50) NOT NULL,
-	[TrainingType] TINYINT NOT NULL,
+	[LearningType] TINYINT NOT NULL,
 	[CourseCode] INT NOT NULL,
 	[StartDate] DATETIME2 NOT NULL,
 	[AgeAtStartOfTraining] TINYINT NOT NULL,
