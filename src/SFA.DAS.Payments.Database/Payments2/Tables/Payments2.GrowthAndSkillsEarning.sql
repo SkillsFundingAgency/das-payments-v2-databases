@@ -13,5 +13,6 @@
 	[PlannedEndDate] DATETIME2 NOT NULL,
 	[ActualEndDate] DATETIME2 NULL,
 	[TrainingStatus] TINYINT NOT NULL,
-	[EmployerContribution] DECIMAL(15,5) NOT NULL
+	[EmployerContribution] DECIMAL(15,5) NOT NULL, 
+    [CourseType] TINYINT NOT NULL
 )
