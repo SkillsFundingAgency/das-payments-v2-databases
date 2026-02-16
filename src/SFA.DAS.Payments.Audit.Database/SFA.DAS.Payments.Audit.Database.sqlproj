@@ -100,6 +100,8 @@
     <Build Include="Payments2\Tables\Payments2.LevyAccountAudit.sql" />
     <Build Include="Payments2\Tables\Payments2.ProviderAdjustmentPayments.sql" />
     <Build Include="Payments2\Tables\Payments2.FundingPlatformType.sql" />
+    <Build Include="Payments2\Tables\Payments2.ShortCourseEarning.sql" />
+    <Build Include="Payments2\Tables\Payments2.ShortCourseEarningPricePeriod.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="zzz.Script.PostDeployment.sql" />
