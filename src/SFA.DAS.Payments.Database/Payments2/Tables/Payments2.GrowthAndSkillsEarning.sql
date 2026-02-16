@@ -1,6 +1,6 @@
-﻿CREATE TABLE [Payments2].[ShortCourseEarning]
+﻿CREATE TABLE [Payments2].[GrowthAndSkillsEarning]
 (
-	[Id] BIGINT NOT NULL IDENTITY(1,1) CONSTRAINT PK_ShortCourseEarning PRIMARY KEY CLUSTERED,
+	[Id] BIGINT NOT NULL IDENTITY(1,1) CONSTRAINT PK_GrowthAndSkillsEarning PRIMARY KEY CLUSTERED,
 	[EarningsId] UNIQUEIDENTIFIER NOT NULL,
 	[UKPRN] BIGINT NOT NULL,
 	[LearnerId] BIGINT NOT NULL,
@@ -13,5 +13,6 @@
 	[PlannedEndDate] DATETIME2 NOT NULL,
 	[ActualEndDate] DATETIME2 NULL,
 	[TrainingStatus] TINYINT NOT NULL,
-	[EmployerContribution] DECIMAL(15,5) NOT NULL
+	[EmployerContribution] DECIMAL(15,5) NOT NULL, 
+    [CourseType] TINYINT NOT NULL
 )
