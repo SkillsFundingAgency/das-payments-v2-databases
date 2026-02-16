@@ -8,5 +8,5 @@
 	[AuditMigrationStartDate] DATETIME2 NULL,
 	[AuditMigrationCompletionDate] DATETIME2 NULL,
 	[CreationDate] DATETIME2 NOT NULL DEFAULT sysutcdatetime(), 
-    [IsOpen] BIT NULL
+    [Status] TINYINT NULL
 )
