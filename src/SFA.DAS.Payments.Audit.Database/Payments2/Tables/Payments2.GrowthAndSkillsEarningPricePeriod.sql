@@ -11,5 +11,6 @@
 	[Amount] DECIMAL(15,5) NOT NULL,
 	[EmployerAccountId] BIGINT NOT NULL,
 	[EmployerType] TINYINT NOT NULL,
-	[FundingAccountId] BIGINT NOT NULL   
+	[FundingAccountId] BIGINT NOT NULL, 
+    [ProcessedOn] DATETIME2 NULL   
 )
