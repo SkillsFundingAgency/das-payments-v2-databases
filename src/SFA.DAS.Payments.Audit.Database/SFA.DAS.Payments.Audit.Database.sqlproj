@@ -100,8 +100,8 @@
     <Build Include="Payments2\Tables\Payments2.LevyAccountAudit.sql" />
     <Build Include="Payments2\Tables\Payments2.ProviderAdjustmentPayments.sql" />
     <Build Include="Payments2\Tables\Payments2.FundingPlatformType.sql" />
-    <Build Include="Payments2\Tables\Payments2.ShortCourseEarning.sql" />
-    <Build Include="Payments2\Tables\Payments2.ShortCourseEarningPricePeriod.sql" />
+    <Build Include="Payments2\Tables\Payments2.GrowthAndSkillsEarning.sql" />
+    <Build Include="Payments2\Tables\Payments2.GrowthAndSkillsEarningPricePeriod.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="zzz.Script.PostDeployment.sql" />
@@ -134,5 +134,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="SFA.DAS.Payments.Audit.Database.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="SFA.DAS.Payments.Audit.Database.refactorlog" />
   </ItemGroup>
 </Project>

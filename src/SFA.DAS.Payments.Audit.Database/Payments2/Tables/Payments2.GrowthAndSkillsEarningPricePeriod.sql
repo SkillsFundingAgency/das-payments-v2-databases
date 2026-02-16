@@ -1,7 +1,7 @@
-﻿CREATE TABLE [Payments2].[ShortCourseEarningPricePeriod]
+﻿CREATE TABLE [Payments2].[GrowthAndSkillsEarningPricePeriod]
 (
-	[Id] BIGINT NOT NULL IDENTITY(1,1) CONSTRAINT PK_ShortCourseEarningPricePeriod PRIMARY KEY CLUSTERED,
-	[ShortCourseEarningsId] UNIQUEIDENTIFIER NOT NULL,
+	[Id] BIGINT NOT NULL IDENTITY(1,1) CONSTRAINT PK_GrowthAndSkillsEarningPricePeriod PRIMARY KEY CLUSTERED,
+	[GrowthAndSkillsEarningsId] UNIQUEIDENTIFIER NOT NULL,
 	[Price] DECIMAL(15,5) NOT NULL,
 	[StartDate] DATETIME2 NOT NULL,
 	[EndDate] DATETIME2 NULL,
@@ -12,5 +12,4 @@
 	[EmployerAccountId] BIGINT NOT NULL,
 	[EmployerType] TINYINT NOT NULL,
 	[FundingAccountId] BIGINT NOT NULL   
-
 )
