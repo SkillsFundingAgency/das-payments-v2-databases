@@ -8,6 +8,7 @@
 	[LearnerReference] NVARCHAR(50) NOT NULL,
 	[LearningType] TINYINT NOT NULL,
 	[CourseCode] NVARCHAR(255) NOT NULL,
+	[CourseReference] NVARCHAR(255) NOT NULL,
 	[StartDate] DATETIME2 NOT NULL,
 	[AgeAtStartOfTraining] TINYINT NOT NULL,
 	[PlannedEndDate] DATETIME2 NOT NULL,
