@@ -12,5 +12,6 @@
 	[EmployerAccountId] BIGINT NOT NULL,
 	[EmployerType] TINYINT NOT NULL,
 	[FundingAccountId] BIGINT NOT NULL, 
-    [ProcessedOn] DATETIME2 NULL   
+    [ProcessedOn] DATETIME2 NULL, 
+    [ApprenticeshipId] BIGINT NULL   
 )
