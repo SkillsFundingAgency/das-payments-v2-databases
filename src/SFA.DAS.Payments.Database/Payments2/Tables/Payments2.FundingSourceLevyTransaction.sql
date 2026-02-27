@@ -31,7 +31,9 @@
     [ApprenticeshipId] BIGINT NULL,
 	[ApprenticeshipEmployerType] TINYINT NULL,
 	[DuplicateNumber] INT NULL,
-	FundingPlatformType TINYINT NULL constraint DF_FundingSourceLevyTransaction__FundingPlatformType DEFAULT(1)
+	FundingPlatformType TINYINT NULL constraint DF_FundingSourceLevyTransaction__FundingPlatformType DEFAULT(1), 
+    [LearningType] TINYINT NULL, 
+    [CourseType] TINYINT NULL
 )
 GO
 
