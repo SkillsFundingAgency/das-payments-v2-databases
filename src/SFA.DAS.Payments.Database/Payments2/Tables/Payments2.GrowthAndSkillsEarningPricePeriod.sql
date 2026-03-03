@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [Payments2].[GrowthAndSkillsEarningPricePeriod]
 (
 	[Id] BIGINT NOT NULL IDENTITY(1,1) CONSTRAINT PK_GrowthAndSkillsEarningPricePeriod PRIMARY KEY CLUSTERED,
-	[GrowthAndSkillsEarningEarningsId] UNIQUEIDENTIFIER NOT NULL,
+	[GrowthAndSkillsEarningsId] UNIQUEIDENTIFIER NOT NULL,
 	[Price] DECIMAL(15,5) NOT NULL,
 	[StartDate] DATETIME2 NOT NULL,
 	[EndDate] DATETIME2 NULL,
