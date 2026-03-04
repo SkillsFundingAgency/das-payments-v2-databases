@@ -49,4 +49,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="GrowthAndSkillsEarningsId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="92ca67bc-ed00-47be-b464-b9bd5af211d7" ChangeDateTime="03/04/2026 12:53:04">
+    <Property Name="ElementName" Value="[Payments2].[GrowthAndSkillsEarning].[LearnerId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Payments2].[GrowthAndSkillsEarning]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LearnerRef" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="35809886-cb83-4607-be85-63f12ca3ef64" ChangeDateTime="03/04/2026 12:59:35">
+    <Property Name="ElementName" Value="[Payments2].[GrowthAndSkillsEarning].[LearnerRef]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Payments2].[GrowthAndSkillsEarning]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LearnerKey" />
+  </Operation>
 </Operations>
