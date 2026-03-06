@@ -34,7 +34,7 @@
 	FundingPlatformType TINYINT NULL constraint DF_FundingSourceLevyTransaction__FundingPlatformType DEFAULT(1), 
     [LearningType] TINYINT NULL, 
     [CourseType] TINYINT NULL,
-	[CourseCode] NVARCHAR(8) NULL
+	[CourseCode] NVARCHAR(50) NULL
 )
 GO
 
