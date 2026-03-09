@@ -7,5 +7,8 @@
 	[CompletionDate] DATETIME2 NOT NULL,
 	[AuditMigrationStartDate] DATETIME2 NULL,
 	[AuditMigrationCompletionDate] DATETIME2 NULL,
-	[CreationDate] DATETIME2 NOT NULL DEFAULT sysutcdatetime()
+	[CreationDate] DATETIME2 NOT NULL DEFAULT sysutcdatetime(), 
+    [Status] TINYINT NULL, 
+    [CalendarYear] SMALLINT NULL, 
+    [CalendarMonth] TINYINT NULL
 )
