@@ -35,6 +35,34 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="AdjustedDataLockedEarnings" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="fba964d0-e2f1-4b4f-8841-c86ae9ed51a9" ChangeDateTime="01/26/2026 13:24:45">
+    <Property Name="ElementName" Value="[Payments2].[ShortCourseEarning].[TrainingType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Payments2].[ShortCourseEarning]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LearningType" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="92ad7bde-28bf-433d-827d-be705dab5305" ChangeDateTime="03/03/2026 16:24:41">
+    <Property Name="ElementName" Value="[Payments2].[GrowthAndSkillsEarningPricePeriod].[GrowthAndSkillsEarningEarningsId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Payments2].[GrowthAndSkillsEarningPricePeriod]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="GrowthAndSkillsEarningsId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="92ca67bc-ed00-47be-b464-b9bd5af211d7" ChangeDateTime="03/04/2026 12:53:04">
+    <Property Name="ElementName" Value="[Payments2].[GrowthAndSkillsEarning].[LearnerId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Payments2].[GrowthAndSkillsEarning]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LearnerRef" />
+  </Operation>
+	<Operation Name="Rename Refactor" Key="35809886-cb83-4607-be85-63f12ca3ef64" ChangeDateTime="03/04/2026 12:59:35">
+		<Property Name="ElementName" Value="[Payments2].[GrowthAndSkillsEarning].[LearnerRef]" />
+		<Property Name="ElementType" Value="SqlSimpleColumn" />
+		<Property Name="ParentElementName" Value="[Payments2].[GrowthAndSkillsEarning]" />
+		<Property Name="ParentElementType" Value="SqlTable" />
+		<Property Name="NewName" Value="LearnerKey" />
+	</Operation>
   <Operation Name="Rename Refactor" Key="7432928a-655d-4e52-91a4-3b9df2abfb4d" ChangeDateTime="02/16/2026 12:10:33">
     <Property Name="ElementName" Value="[Payments2].[CollectionPeriod].[IsOpen]" />
     <Property Name="ElementType" Value="SqlSimpleColumn" />
