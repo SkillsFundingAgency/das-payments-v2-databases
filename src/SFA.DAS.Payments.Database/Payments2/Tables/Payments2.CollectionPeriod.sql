@@ -10,5 +10,7 @@
 	[CreationDate] DATETIME2 NOT NULL DEFAULT sysutcdatetime(), 
     [Status] TINYINT NULL, 
     [CalendarYear] SMALLINT NULL, 
-    [CalendarMonth] TINYINT NULL
+    [CalendarMonth] TINYINT NULL, 
+    [StartDateTime] DATETIME2 NULL, 
+    [EndDateTime] DATETIME2 NULL
 )
