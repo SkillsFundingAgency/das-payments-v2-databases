@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="6195c536-a10a-4c01-b4e0-f67c99cbaaf8" ChangeDateTime="01/26/2026 13:24:26">
+    <Property Name="ElementName" Value="[Payments2].[ShortCourseEarning].[TrainingType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Payments2].[ShortCourseEarning]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LearningType" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4b8e33bd-4f0c-48d6-b5aa-ad45f8db09a6" ChangeDateTime="03/04/2026 12:53:20">
+    <Property Name="ElementName" Value="[Payments2].[GrowthAndSkillsEarning].[LearnerId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Payments2].[GrowthAndSkillsEarning]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LearnerRef" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ec19bebe-e39c-4b0f-b605-fb1deefcc41d" ChangeDateTime="03/04/2026 12:59:10">
+    <Property Name="ElementName" Value="[Payments2].[GrowthAndSkillsEarning].[LearnerRef]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Payments2].[GrowthAndSkillsEarning]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LearnerKey" />
+  </Operation>
+</Operations>

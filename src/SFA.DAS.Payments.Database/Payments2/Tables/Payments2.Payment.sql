@@ -47,7 +47,10 @@ CREATE TABLE [Payments2].[Payment]
 	DuplicateNumber INT NULL,
 	LearningAimSequenceNumber BIGINT NULL,
 	AgeAtStartOfLearning TINYINT NULL,
-	FundingPlatformType TINYINT NULL constraint DF_Payment__FundingPlatformType DEFAULT(1)
+	FundingPlatformType TINYINT NULL constraint DF_Payment__FundingPlatformType DEFAULT(1), 
+    [LearningType] TINYINT NULL, 
+    [CourseType] TINYINT NULL,
+	[CourseCode] NVARCHAR(50) NULL
 );
 GO
 

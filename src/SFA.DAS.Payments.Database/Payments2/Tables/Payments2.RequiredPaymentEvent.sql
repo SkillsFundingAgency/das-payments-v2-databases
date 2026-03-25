@@ -42,7 +42,10 @@ CREATE TABLE [Payments2].[RequiredPaymentEvent]
     NonPaymentReason TINYINT NULL,
 	EventType NVARCHAR(4000) NULL,
 	DuplicateNumber INT NULL,
-	AgeAtStartOfLearning TINYINT NULL
+	AgeAtStartOfLearning TINYINT NULL, 
+    [LearningType] TINYINT NULL, 
+    [CourseType] TINYINT NULL, 
+    [CourseCode] NVARCHAR(50) NULL
 )
 GO
 
