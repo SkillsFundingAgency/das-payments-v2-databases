@@ -1,0 +1,5 @@
+﻿CREATE TABLE [Payments2].[LearningType]
+(
+	[Id] TINYINT NOT NULL CONSTRAINT PK_LearningType PRIMARY KEY CLUSTERED, 
+    [Description] VARCHAR(255) NOT NULL
+)
