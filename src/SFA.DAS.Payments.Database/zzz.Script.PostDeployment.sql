@@ -255,3 +255,21 @@ IF Exists (Select * from sys.columns where object_id = object_id('CollectionPeri
 		where Status is null 
 		
 GO
+
+
+MERGE INTO [Payments2].[CollectionPeriodStatus]	 AS Target
+USING (VALUES
+(1	, N'Not Started'),
+(2	, N'Open'),
+(3 , N'Closed'),
+(4 , N'Completed')
+) AS Source ([Id],[Description])
+ON (Target.[Id] = Source.[Id])
+WHEN MATCHED AND
+  ( NULLIF(Source.[Description], Target.[Description]) IS NOT NULL) THEN
+ UPDATE SET [Description] = Source.[Description]
+WHEN NOT MATCHED BY TARGET THEN
+ INSERT([Id],[Description]) VALUES(Source.[Id],Source.[Description])
+WHEN NOT MATCHED BY SOURCE THEN 
+ DELETE;
+ GO
