@@ -247,3 +247,11 @@ GO
 IF NOT EXISTS (SELECT * FROM [Payments2].[FundingPlatformType]  WHERE [Id] = 2)
 	INSERT INTO [Payments2].[FundingPlatformType]  values (2,'DigitalApprenticeshipService')
 GO	
+
+
+IF Exists (Select * from sys.columns where object_id = object_id('CollectionPeriod') and name = 'Status')
+	Update CollectionPeriod 
+		set Status = 4 
+		where Status is null 
+		
+GO
