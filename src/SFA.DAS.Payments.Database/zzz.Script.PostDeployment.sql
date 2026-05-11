@@ -247,3 +247,61 @@ GO
 IF NOT EXISTS (SELECT * FROM [Payments2].[FundingPlatformType]  WHERE [Id] = 2)
 	INSERT INTO [Payments2].[FundingPlatformType]  values (2,'DigitalApprenticeshipService')
 GO	
+
+IF Exists (Select * from sys.columns where object_id = object_id('CollectionPeriod') and name = 'Status')
+	Update CollectionPeriod 
+		set Status = 4 
+		where Status is null 
+		
+GO
+
+
+MERGE INTO [Payments2].[CollectionPeriodStatus]	 AS Target
+USING (VALUES
+(1	, N'Not Started'),
+(2	, N'Open'),
+(3 , N'Closed'),
+(4 , N'Completed')
+) AS Source ([Id],[Description])
+ON (Target.[Id] = Source.[Id])
+WHEN MATCHED AND
+  ( NULLIF(Source.[Description], Target.[Description]) IS NOT NULL) THEN
+ UPDATE SET [Description] = Source.[Description]
+WHEN NOT MATCHED BY TARGET THEN
+ INSERT([Id],[Description]) VALUES(Source.[Id],Source.[Description])
+WHEN NOT MATCHED BY SOURCE THEN 
+ DELETE;
+ GO
+
+MERGE INTO [Payments2].[CourseType]	 AS Target
+USING (VALUES
+(1	, N'Apprenticeship'),
+(2	, N'Functional Skill'),
+(3	, N'Short Course')
+) AS Source ([Id],[Description])
+ON (Target.[Id] = Source.[Id])
+WHEN MATCHED AND
+  ( NULLIF(Source.[Description], Target.[Description]) IS NOT NULL) THEN
+ UPDATE SET [Description] = Source.[Description]
+WHEN NOT MATCHED BY TARGET THEN
+ INSERT([Id],[Description]) VALUES(Source.[Id],Source.[Description])
+WHEN NOT MATCHED BY SOURCE THEN 
+ DELETE;
+ GO
+
+ MERGE INTO [Payments2].[LearningType] AS Target
+USING (VALUES
+(1	, N'Apprenticeship'),
+(2	, N'Foundation Apprenticeship'),
+(3	, N'Maths & English'),
+(4	, N'Apprenticeship Unit')
+) AS Source ([Id],[Description])
+ON (Target.[Id] = Source.[Id])
+WHEN MATCHED AND
+  ( NULLIF(Source.[Description], Target.[Description]) IS NOT NULL) THEN
+ UPDATE SET [Description] = Source.[Description]
+WHEN NOT MATCHED BY TARGET THEN
+ INSERT([Id],[Description]) VALUES(Source.[Id],Source.[Description])
+WHEN NOT MATCHED BY SOURCE THEN 
+ DELETE;
+ GO

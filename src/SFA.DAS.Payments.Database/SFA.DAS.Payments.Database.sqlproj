@@ -136,6 +136,9 @@
     <Build Include="Payments2\Tables\Payments2.AuditMigrationJob.sql" />
     <Build Include="Payments2\Tables\Payments2.GrowthAndSkillsEarning.sql" />
     <Build Include="Payments2\Tables\Payments2.GrowthAndSkillsEarningPricePeriod.sql" />
+    <Build Include="Payments2\Tables\Payments2.CourseType.sql" />
+    <Build Include="Payments2\Tables\Payments2.LearningType.sql" />
+    <Build Include="Payments2\Tables\Payments2.CollectionPeriodStatus.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="zzz.Script.PostDeployment.sql" />

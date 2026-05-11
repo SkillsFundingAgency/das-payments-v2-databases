@@ -44,7 +44,10 @@ CREATE TABLE [Payments2].[FundingSourceEvent]
 	NonPaymentReason TINYINT NULL,
 	DuplicateNumber INT NULL,
 	AgeAtStartOfLearning TINYINT NULL,
-	FundingPlatformType TINYINT NULL CONSTRAINT DF_FundingSource__FundingPlatformType DEFAULT(1)
+	FundingPlatformType TINYINT NULL CONSTRAINT DF_FundingSource__FundingPlatformType DEFAULT(1),
+	LearningType TINYINT NULL, 
+    CourseType TINYINT NULL,
+	CourseCode NVARCHAR(50) NULL
 )
 GO
 

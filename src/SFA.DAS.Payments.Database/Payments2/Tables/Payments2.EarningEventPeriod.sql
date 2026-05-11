@@ -10,7 +10,9 @@
 	CreationDate DATETIMEOFFSET NOT NULL CONSTRAINT DF_EarningEventPeriod__CreationDate DEFAULT (SYSDATETIMEOFFSET()),	
 	CensusDate DATETIME2  NULL,
 	AcademicYear SMALLINT NULL,
-	CollectionPeriod TINYINT NULL
+	CollectionPeriod TINYINT NULL,
+    ApprenticeshipId BIGINT NULL,
+	ApprenticeshipEmployerType TINYINT NULL,
 )
 GO
 
