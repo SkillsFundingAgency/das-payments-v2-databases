@@ -51,6 +51,7 @@ CREATE UNIQUE INDEX [UX_FundingSourceLevyTransaction_LogicalDuplicates] ON [Paym
 (
 [JobId],
 [Ukprn],
+[EarningEventId],
 [AcademicYear],
 [CollectionPeriod],
 [DeliveryPeriod],

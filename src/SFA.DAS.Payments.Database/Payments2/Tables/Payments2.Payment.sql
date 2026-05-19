@@ -58,6 +58,7 @@ CREATE UNIQUE INDEX UX_Payment_LogicalDuplicates ON [Payments2].[Payment]
 (
 	[JobId],
 	[Ukprn],
+	[EarningEventId],
 	[AcademicYear],
 	[CollectionPeriod],
 	[DeliveryPeriod],

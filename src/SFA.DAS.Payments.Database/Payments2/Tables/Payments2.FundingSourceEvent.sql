@@ -55,6 +55,7 @@ CREATE UNIQUE INDEX [UX_FundingSourceEvent_LogicalDuplicates] ON [Payments2].[Fu
 (
 	[JobId],
 	[Ukprn],
+	[EarningEventId],
 	[AcademicYear],
 	[CollectionPeriod],
 	[DeliveryPeriod],

@@ -32,6 +32,7 @@ CREATE UNIQUE INDEX [UX_DataLockEvent_LogicalDuplicates] ON [Payments2].[DataLoc
 ( 
 	[JobId], 
 	[Ukprn], 
+	[EarningEventId],
 	[AcademicYear], 
 	[CollectionPeriod], 
 	[IsPayable], 
