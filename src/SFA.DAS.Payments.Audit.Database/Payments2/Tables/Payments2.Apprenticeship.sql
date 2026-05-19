@@ -20,6 +20,9 @@
 	[IsLevyPayer] 						BIT 			NOT NULL,
 	[CreationDate] 						DATETIMEOFFSET 	NOT NULL, 
 	[ApprenticeshipEmployerType] 		TINYINT 		NOT NULL,
+    [LearningType] TINYINT NULL,
+    [CourseType] TINYINT NULL,
+    [CourseCode] NVARCHAR(50) NULL
 )
 
 GO

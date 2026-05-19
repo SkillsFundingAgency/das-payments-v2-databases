@@ -16,10 +16,13 @@
 	LegalEntityName NVARCHAR (100) NULL,
 	TransferSendingEmployerAccountId BIGINT NULL,
 	StopDate Date NULL, 
-    [Status] TINYINT NOT NULL,
-    [IsLevyPayer] BIT NOT NULL,
+    Status TINYINT NOT NULL,
+    IsLevyPayer BIT NOT NULL,
 	CreationDate DATETIMEOFFSET NOT NULL CONSTRAINT DF_Apprenticeship__CreationDate DEFAULT (SYSDATETIMEOFFSET()), 
-    [ApprenticeshipEmployerType] TINYINT NOT NULL CONSTRAINT DF_Apprenticeship_ApprenticeshipEmployerType DEFAULT (1),
+    ApprenticeshipEmployerType TINYINT NOT NULL CONSTRAINT DF_Apprenticeship_ApprenticeshipEmployerType DEFAULT (1),
+    LearningType TINYINT NULL,
+    CourseType TINYINT NULL,
+    CourseCode NVARCHAR(50) NULL
 
 )
 
