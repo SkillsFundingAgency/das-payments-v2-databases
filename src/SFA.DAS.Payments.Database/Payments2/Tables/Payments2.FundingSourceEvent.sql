@@ -77,7 +77,10 @@ CREATE UNIQUE INDEX [UX_FundingSourceEvent_LogicalDuplicates] ON [Payments2].[Fu
 	[TransferSenderAccountId],
 	[ApprenticeshipEmployerType],
 	[ClawbackSourcePaymentEventId],
-	[DuplicateNumber]
+	[DuplicateNumber],
+	[LearningType], 
+    [CourseType],
+	[CourseCode]
 )
 GO
 
