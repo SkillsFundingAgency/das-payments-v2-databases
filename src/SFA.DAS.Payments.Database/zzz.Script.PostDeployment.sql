@@ -248,12 +248,6 @@ IF NOT EXISTS (SELECT * FROM [Payments2].[FundingPlatformType]  WHERE [Id] = 2)
 	INSERT INTO [Payments2].[FundingPlatformType]  values (2,'DigitalApprenticeshipService')
 GO	
 
-IF Exists (SELECT * FROM sys.columns WHERE object_id = object_id('Payments2.CollectionPeriod') and name = 'Status')
-	Update Payments2.CollectionPeriod 
-		set Status = 4 
-		where Status is null 
-		
-GO
 
 
 MERGE INTO [Payments2].[CollectionPeriodStatus]	 AS Target
@@ -272,6 +266,13 @@ WHEN NOT MATCHED BY TARGET THEN
 WHEN NOT MATCHED BY SOURCE THEN 
  DELETE;
  GO
+ 
+IF Exists (Select * from sys.columns where object_id = object_id('CollectionPeriod') and name = 'Status')
+	Update CollectionPeriod 
+		set Status = 4 
+		where Status is null 
+		
+GO
 
 MERGE INTO [Payments2].[CourseType]	 AS Target
 USING (VALUES
