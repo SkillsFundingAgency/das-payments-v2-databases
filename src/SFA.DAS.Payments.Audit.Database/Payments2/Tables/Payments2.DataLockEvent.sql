@@ -25,6 +25,9 @@
 	CreationDate DATETIMEOFFSET NOT NULL,
 	DuplicateNumber INT NULL,
 	AgeAtStartOfLearning TINYINT NULL,
+    LearningType TINYINT NULL,
+    CourseType TINYINT NULL,
+    CourseCode NVARCHAR(50) NULL
 )
 GO
 
