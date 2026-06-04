@@ -15,7 +15,7 @@
 	[Amount] DECIMAL(15,5) NOT NULL,
 	[MessagePayload] nvarchar(max) not null,
 	[MessageType] nvarchar(max) not null, 
-    [IlrSubmissionDateTime] DATETIME NOT NULL, 
+    [IlrSubmissionDateTime] DATETIME NULL, 
     [FundingAccountId] BIGINT NOT NULL,
 	[TransactionType] TINYINT NULL, 
 	[SfaContributionPercentage] DECIMAL(15,5) NULL,
