@@ -25,6 +25,9 @@
 	IlrFileName  NVARCHAR(400) NULL,
 	EventType NVARCHAR(4000) NULL,
 	AgeAtStartOfLearning TINYINT NULL,
+    LearningType TINYINT NULL, 
+    CourseType TINYINT NULL,
+	CourseCode NVARCHAR(50) NULL
 )
 GO
 
@@ -45,7 +48,10 @@ CREATE UNIQUE INDEX UQ_EarningEvent ON [Payments2].[EarningEvent]
 	[LearningAimFundingLineType],
 	[LearningAimSequenceNumber], 
 	[LearningStartDate], 
-	[EventType]
+	[EventType],
+    [LearningType] , 
+    [CourseType],
+	[CourseCode]
 )
 GO
 
