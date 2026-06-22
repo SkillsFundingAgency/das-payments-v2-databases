@@ -45,7 +45,8 @@ CREATE TABLE [Payments2].[RequiredPaymentEvent]
 	AgeAtStartOfLearning TINYINT NULL, 
     [LearningType] TINYINT NULL, 
     [CourseType] TINYINT NULL, 
-    [CourseCode] NVARCHAR(50) NULL
+    [CourseCode] NVARCHAR(50) NULL,
+	[ExternalEarningsId] UNIQUEIDENTIFIER NULL
 )
 GO
 
@@ -75,7 +76,8 @@ CREATE UNIQUE INDEX [UX_RequiredPaymentEvent_LogicalDuplicates] ON [Payments2].[
 	[TransferSenderAccountId],
 	[ApprenticeshipEmployerType],
 	[ClawbackSourcePaymentEventId],
-	[DuplicateNumber]
+	[DuplicateNumber],
+    [ExternalEarningsId]
 )
 GO
 

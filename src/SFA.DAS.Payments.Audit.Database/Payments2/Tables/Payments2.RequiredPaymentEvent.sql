@@ -45,7 +45,8 @@ CREATE TABLE [Payments2].[RequiredPaymentEvent]
 	AgeAtStartOfLearning TINYINT NULL, 
     [LearningType] TINYINT NULL, 
     [CourseType] TINYINT NULL, 
-    [CourseCode] NVARCHAR(50) NULL
+    [CourseCode] NVARCHAR(50) NULL,
+	[ExternalEarningsId] UNIQUEIDENTIFER NULL
 )
 GO
 
