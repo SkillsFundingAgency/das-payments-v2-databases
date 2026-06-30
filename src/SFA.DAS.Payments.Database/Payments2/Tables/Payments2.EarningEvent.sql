@@ -25,6 +25,9 @@
 	IlrFileName  NVARCHAR(400) NULL,
 	EventType NVARCHAR(4000) NULL,
 	AgeAtStartOfLearning TINYINT NULL,
+    LearningType TINYINT NULL,
+    CourseType TINYINT NULL,
+    CourseCode NVARCHAR(50) NULL
 )
 GO
 

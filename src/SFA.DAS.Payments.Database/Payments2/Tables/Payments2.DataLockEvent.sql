@@ -25,6 +25,9 @@
 	CreationDate DATETIMEOFFSET NOT NULL CONSTRAINT DF_DataLockEvent__CreationDate DEFAULT (SYSDATETIMEOFFSET()),
 	DuplicateNumber INT NULL,
 	AgeAtStartOfLearning TINYINT NULL,
+    LearningType TINYINT NULL,
+    CourseType TINYINT NULL,
+    CourseCode NVARCHAR(50) NULL
 )
 GO
 
