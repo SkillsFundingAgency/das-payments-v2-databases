@@ -294,7 +294,7 @@ WHEN NOT MATCHED BY SOURCE THEN
 USING (VALUES
 (1	, N'Apprenticeship'),
 (2	, N'Foundation Apprenticeship'),
-(3	, N'Maths & English'),
+(3	, N'Maths and English'),
 (4	, N'Apprenticeship Unit')
 ) AS Source ([Id],[Description])
 ON (Target.[Id] = Source.[Id])
