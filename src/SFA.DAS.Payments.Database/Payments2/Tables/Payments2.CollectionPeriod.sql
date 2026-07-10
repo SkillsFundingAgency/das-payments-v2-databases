@@ -9,8 +9,6 @@
 	[AuditMigrationCompletionDate] DATETIME2 NULL,
 	[CreationDate] DATETIME2 NOT NULL DEFAULT sysutcdatetime(), 
     [Status] TINYINT NULL CONSTRAINT FK_CollectionPeriod__CollectionPeriodStatus FOREIGN KEY REFERENCES [Payments2].[CollectionPeriodStatus] (Id) CONSTRAINT DF_CollectionPeriod__Status DEFAULT (1),
-    [CalendarYear] SMALLINT NULL, 
-    [CalendarMonth] TINYINT NULL, 
     [StartDateTime] DATETIME2 NULL, 
     [EndDateTime] DATETIME2 NULL
 )
