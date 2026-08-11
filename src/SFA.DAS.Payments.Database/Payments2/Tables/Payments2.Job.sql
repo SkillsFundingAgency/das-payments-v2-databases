@@ -40,3 +40,19 @@ GO
 CREATE NONCLUSTERED INDEX [IX_Payments2_Job_Search] 
 ON [Payments2].[Job] ([DCJobId], [AcademicYear], [DCJobSucceeded], [JobType], [Status]) 
 INCLUDE ([IlrSubmissionTime], [Ukprn]) WITH (ONLINE = ON)
+GO
+
+CREATE NONCLUSTERED INDEX [IX_Payments2_Job_LatestSuccessfulJobs] ON [Payments2].[Job] (
+  [AcademicYear], [DCJobSucceeded], [JobType], [Ukprn], [Status]
+) INCLUDE ([IlrSubmissionTime]) WITH (ONLINE = ON)
+GO
+
+CREATE NONCLUSTERED INDEX [IX_Payments2_Job_LatestSuccessfulJobs_2] ON [Payments2].[Job] (
+  [AcademicYear], [CollectionPeriod], [Status]
+) INCLUDE (
+  [CreationDate], [DataLocksCompletionTime], [DCJobEndTime], [DCJobId], [DCJobSucceeded], 
+  [EndTime], [IlrSubmissionTime], [JobType], [LearnerCount], [StartTime], [Ukprn]
+) WITH (ONLINE = ON)
+GO
+
+
