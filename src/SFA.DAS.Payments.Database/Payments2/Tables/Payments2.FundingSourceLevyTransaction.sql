@@ -32,9 +32,10 @@
 	[ApprenticeshipEmployerType] TINYINT NULL,
 	[DuplicateNumber] INT NULL,
 	FundingPlatformType TINYINT NULL constraint DF_FundingSourceLevyTransaction__FundingPlatformType DEFAULT(1), 
-    [LearningType] TINYINT NULL, 
+    [LearningType] TINYINT NULL,
     [CourseType] TINYINT NULL,
-	[CourseCode] NVARCHAR(50) NULL
+	[CourseCode] NVARCHAR(50) NULL,
+	[ExternalEarningsId] UNIQUEIDENTIFIER NULL
 )
 GO
 
@@ -71,6 +72,7 @@ CREATE UNIQUE INDEX [UX_FundingSourceLevyTransaction_LogicalDuplicates] ON [Paym
 [TransferSenderAccountId],
 [ApprenticeshipEmployerType],
 [ClawbackSourcePaymentEventId],
-[DuplicateNumber]
+[DuplicateNumber],
+[ExternalEarningsId]
 )
 GO
