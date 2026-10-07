@@ -27,7 +27,8 @@
 	AgeAtStartOfLearning TINYINT NULL,
     LearningType TINYINT NULL,
     CourseType TINYINT NULL,
-    CourseCode NVARCHAR(50) NULL
+    CourseCode NVARCHAR(50) NULL,
+	ExternalEarningsId UNIQUEIDENTIFIER NULL
 )
 GO
 
@@ -48,7 +49,8 @@ CREATE UNIQUE INDEX [UX_DataLockEvent_LogicalDuplicates] ON [Payments2].[DataLoc
 	[LearningAimPathwayCode], 
 	[LearningAimFundingLineType], 
 	[LearningStartDate], 
-	[DuplicateNumber]
+	[DuplicateNumber],
+	[ExternalEarningsId]
 )
 GO
 CREATE NONCLUSTERED INDEX [IX_DataLockEvent_Submission] ON [Payments2].[DataLockEvent] 
