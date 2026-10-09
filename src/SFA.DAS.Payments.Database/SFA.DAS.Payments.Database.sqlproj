@@ -142,6 +142,9 @@
     <Build Include="Payments2\Tables\Payments2.CollectionPeriodStatus.sql" />
   </ItemGroup>
   <ItemGroup>
+    <PreDeploy Include="zzz.Script.PreDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
     <PostDeploy Include="zzz.Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
