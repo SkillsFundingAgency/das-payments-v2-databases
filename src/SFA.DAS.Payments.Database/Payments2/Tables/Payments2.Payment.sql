@@ -50,7 +50,8 @@ CREATE TABLE [Payments2].[Payment]
 	FundingPlatformType TINYINT NULL constraint DF_Payment__FundingPlatformType DEFAULT(1), 
     [LearningType] TINYINT NULL, 
     [CourseType] TINYINT NULL,
-	[CourseCode] NVARCHAR(50) NULL
+	[CourseCode] NVARCHAR(50) NULL,
+	[ExternalEarningsId] UNIQUEIDENTIFIER NULL
 );
 GO
 
@@ -80,7 +81,8 @@ CREATE UNIQUE INDEX UX_Payment_LogicalDuplicates ON [Payments2].[Payment]
 	[TransferSenderAccountId],
 	[ApprenticeshipEmployerType],
 	[ClawbackSourcePaymentEventId],
-	[DuplicateNumber]
+	[DuplicateNumber],
+	[ExternalEarningsId]
 )
 GO
 
