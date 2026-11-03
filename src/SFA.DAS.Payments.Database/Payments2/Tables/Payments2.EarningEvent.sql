@@ -20,14 +20,15 @@
 	JobId  BIGINT NOT NULL,
 	EventTime DATETIMEOFFSET NOT NULL,
 	CreationDate DATETIMEOFFSET NOT NULL CONSTRAINT DF_EarningEvent__CreationDate DEFAULT (SYSDATETIMEOFFSET()), 
-    	LearningAimSequenceNumber BIGINT NULL,
+    LearningAimSequenceNumber BIGINT NULL,
 	SfaContributionPercentage DECIMAL(15, 5) NULL,
 	IlrFileName  NVARCHAR(400) NULL,
 	EventType NVARCHAR(4000) NULL,
 	AgeAtStartOfLearning TINYINT NULL,
     LearningType TINYINT NULL,
     CourseType TINYINT NULL,
-    CourseCode NVARCHAR(50) NULL
+    CourseCode NVARCHAR(50) NULL,
+	ExternalEarningsId UNIQUEIDENTIFIER NULL
 )
 GO
 
@@ -48,7 +49,8 @@ CREATE UNIQUE INDEX UQ_EarningEvent ON [Payments2].[EarningEvent]
 	[LearningAimFundingLineType],
 	[LearningAimSequenceNumber], 
 	[LearningStartDate], 
-	[EventType]
+	[EventType],
+	[ExternalEarningsId]
 )
 GO
 
