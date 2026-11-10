@@ -9,5 +9,6 @@
     [SecondHiringGrantStatus] TINYINT NOT NULL,
     [SecondHiringGrantCorrelationId] UNIQUEIDENTIFIER NULL,
     [CreationDate] DATETIME2 NOT NULL,
+    [UpdateDate] DATETIME2 NOT NULL,
     CONSTRAINT UQ_ApprenticeshipEmploymentVerification_ApprenticeshipId UNIQUE (ApprenticeshipId)
 )
