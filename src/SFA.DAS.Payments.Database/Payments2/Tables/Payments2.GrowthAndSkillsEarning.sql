@@ -17,7 +17,7 @@
 	[EmployerContribution] DECIMAL(15,5) NOT NULL,
     [CourseType] TINYINT NOT NULL,
     [LearningKey] UNIQUEIDENTIFIER NULL,
-	[IsValid] BIT NOT NULL
+	[IsInvalidated] BIT NULL
 )
 GO
 
